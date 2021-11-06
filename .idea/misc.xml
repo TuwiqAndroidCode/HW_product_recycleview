@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/khulud/Desktop/HW_product_recycleview/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1" />
+        <entry key="..\:/Users/khulud/Desktop/HW_product_recycleview/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/khulud/Desktop/HW_product_recycleview/app/src/main/res/layout/activity_smart_phone.xml" value="0.1" />
+        <entry key="..\:/Users/khulud/Desktop/HW_product_recycleview/app/src/main/res/layout/vertical_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.905940594059406" />
       </map>
     </option>
