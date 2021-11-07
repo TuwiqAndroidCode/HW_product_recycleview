@@ -52,3 +52,6 @@ The product’s information
 ## Final result
 
 <img src="https://raw.githubusercontent.com/TuwiqAndroidCode/HW_product_recycleview/master/app/src/main/res/drawable/final_result.png" width="200"  />
+ 
+![](https://github.com/noraGlowin/HW_product_recycleview/blob/master/app/src/main/res/drawable/test.gif?raw=true)
+
