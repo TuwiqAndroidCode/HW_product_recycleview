@@ -39,7 +39,7 @@ class ItemAdapter(private val dataSet : List<Product> , private val context: Con
 
         holder.image?.setImageResource(item.productImage)
         holder.phoneName?.text = context.getString(item.productNameId)
-        holder.price?.text = item.productPrice.toString()
+        holder.price?.text = context.getString(item.productPrice)
 
 
 
