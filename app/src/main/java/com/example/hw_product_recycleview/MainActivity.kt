@@ -14,13 +14,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // launch the recyclerView
         activateGridRecyclerView()
 
     }
 
+
+    /**
+     * function to activate the recyclerView
+     */
+
     private fun activateGridRecyclerView() {
         binding.gridRecyclerView.adapter = SmartPhoneAdapter(applicationContext)
         binding.gridRecyclerView.setHasFixedSize(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

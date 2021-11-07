@@ -1,5 +1,10 @@
 package com.example.hw_product_recycleview.conistant
 
+/**
+ *  An object holds all websites related to the phones
+ */
+
+
 object SmartPhoneWebsite {
     const val Iphone_12_64GB =
         "https://www.apple.com/shop/buy-iphone/iphone-12/6.1-inch-display-64gb-black-unlocked"

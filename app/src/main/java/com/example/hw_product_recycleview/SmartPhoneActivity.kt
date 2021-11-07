@@ -15,21 +15,28 @@ class SmartPhoneActivity : AppCompatActivity() {
         binding = ActivitySmartPhoneBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // receive the intent from MainActivity
         binding.phoneNameSmartphoneActivity.text = intent.extras?.getString(ProductInfo.PHONE_NAME)
-        println(intent.extras?.getString(ProductInfo.PHONE_NAME))
         binding.phoneImageSmartPhoneActivity.setImageResource(intent.extras?.getInt(ProductInfo.PHONE_IMAGE)!!)
-        binding.phonePriceSmartPhoneActivity.text =
-            intent.extras?.getString(ProductInfo.PHONE_PRICE)
+        binding.phonePriceSmartPhoneActivity.text = intent.extras?.getString(ProductInfo.PHONE_PRICE)
 
 
+        // start intent to open Uri on browser
         binding.goToPhoneWebsite.setOnClickListener {
-            val queryUrl: Uri = Uri.parse( getUri(intent.extras?.getString(ProductInfo.PHONE_NAME)))
+            val queryUrl: Uri = Uri.parse(getUri(intent.extras?.getString(ProductInfo.PHONE_NAME)))
             val intent = Intent(Intent.ACTION_VIEW, queryUrl)
             startActivity(intent)
 
         }
+
     }
 
+
+    /**
+     * function to get the Uri for a specified smart phone from SmartPhoneWebsite object
+     * @param phoneName: String
+     * @return Uri value :String
+     */
     private fun getUri(phoneName: String?): String {
 
         return when (phoneName) {

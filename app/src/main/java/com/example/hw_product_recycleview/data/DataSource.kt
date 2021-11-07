@@ -47,36 +47,40 @@ object DataSource {
             70
         ),
         SmartPhone(
-        R.drawable.iphone_13,
-        R.string.Iphone_13,
-           "6000 SR",
-           true,
-           36
+            R.drawable.iphone_13,
+            R.string.Iphone_13,
+            "6000 SR",
+            true,
+            36
         ),
-        SmartPhone(R.drawable.samsung_galaxy_s20_fe,
-        R.string.Samsung_Galaxy_S20_FE,
-        "1900 SR",
-        false,
-        7
+        SmartPhone(
+            R.drawable.samsung_galaxy_s20_fe,
+            R.string.Samsung_Galaxy_S20_FE,
+            "1900 SR",
+            false,
+            7
         ),
-        SmartPhone(R.drawable.samsung_galaxy_s21_,
+        SmartPhone(
+            R.drawable.samsung_galaxy_s21_,
             R.string.Samsung_Galaxy_S21,
             "3500 SR",
             true,
             5
         ),
-        SmartPhone(R.drawable.oppo_5,
+        SmartPhone(
+            R.drawable.oppo_5,
             R.string.OPPO_Reno_5_Pro,
             "2400 SR",
             false,
             0
         ),
-        SmartPhone(R.drawable.iphone_11,
-        R.string.Iphone_11,
-        "2900 SR",
+        SmartPhone(
+            R.drawable.iphone_11,
+            R.string.Iphone_11,
+            "2900 SR",
             true,
             29
-            )
+        )
 
 
     )
