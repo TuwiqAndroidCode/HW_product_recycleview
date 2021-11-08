@@ -1,18 +1,14 @@
 package com.example.hw_product_recycleview.adapter
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
-import android.content.res.ColorStateList
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hw_product_recycleview.ProductsListFragmentDirections
 import com.example.hw_product_recycleview.R
-import com.example.hw_product_recycleview.SmartPhoneActivity
-import com.example.hw_product_recycleview.conistant.ProductInfo
 import com.example.hw_product_recycleview.data.DataSource
 
 class SmartPhoneAdapter(private val context: Context?) :
@@ -21,7 +17,7 @@ class SmartPhoneAdapter(private val context: Context?) :
     // Initialize the data from DataSource class
     private val dataSource = DataSource.smartPhone
 
-    class SmartPhoneViewHolder(view: View?) : RecyclerView.ViewHolder(view!!) {
+    class SmartPhoneViewHolder(val view: View?) : RecyclerView.ViewHolder(view!!) {
 
         // Initialize the view elements
         val productImage: ImageView? = view?.findViewById(R.id.product_image)
@@ -31,7 +27,6 @@ class SmartPhoneAdapter(private val context: Context?) :
         val addToCart: ImageButton? = view?.findViewById(R.id.add_to_cart)
 
     }
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SmartPhoneViewHolder {
@@ -68,11 +63,18 @@ class SmartPhoneAdapter(private val context: Context?) :
 
         // start SmartPhoneActivity when the user click on the image of the product
         holder.productImage?.setOnClickListener {
-            val intent = Intent(context, SmartPhoneActivity::class.java)
-            intent.putExtra(ProductInfo.PHONE_NAME, context?.getString(item.productName))
-            intent.putExtra(ProductInfo.PHONE_IMAGE, item.productImage)
-            intent.putExtra(ProductInfo.PHONE_PRICE, item.productPrice)
-            it?.context?.startActivity(intent)
+            val action = ProductsListFragmentDirections.
+            actionProductsListFragmentToProductFragment(name = context?.getString(item.productName)!!,
+            price = item.productPrice, imageId = item.productImage)
+
+            holder.view?.findNavController()?.navigate(action)
+
+
+//            val intent = Intent(context, SmartPhoneActivity::class.java)
+//            intent.putExtra(ProductInfo.PHONE_NAME, context?.getString(item.productName))
+//            intent.putExtra(ProductInfo.PHONE_IMAGE, item.productImage)
+//            intent.putExtra(ProductInfo.PHONE_PRICE, item.productPrice)
+//            it?.context?.startActivity(intent)
 
         }
 

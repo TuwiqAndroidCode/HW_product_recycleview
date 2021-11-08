@@ -10,6 +10,8 @@
     <string name="Samsung_Galaxy_S21">Samsung Galaxy S21+</string>
     <string name="OPPO_Reno_5_Pro">OPPO Reno 5 Pro</string>
     <string name="Iphone_11">IPhone 11"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

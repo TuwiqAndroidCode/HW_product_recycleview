@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HW_product_recycleview">
         <activity
-            android:name=".SmartPhoneActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
