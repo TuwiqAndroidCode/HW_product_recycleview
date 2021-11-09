@@ -32,18 +32,11 @@ class ProductFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // receive the intent from MainActivity
-//        binding.phoneNameSmartphoneActivity.text = intent.extras?.getString(ProductInfo.PHONE_NAME)
-//        binding.phoneImageSmartPhoneActivity.setImageResource(intent.extras?.getInt(ProductInfo.PHONE_IMAGE)!!)
-//        binding.phonePriceSmartPhoneActivity.text = intent.extras?.getString(ProductInfo.PHONE_PRICE)
-
-
         arguments?.let {
             phoneName = it.getString("name").toString()
-            binding.phoneNameSmartphoneActivity.text = it.getString("name").toString()
+            binding.phoneNameSmartphoneActivity.text = phoneName
             binding.phoneImageSmartPhoneActivity.setImageResource(it.getInt("imageId"))
             binding.phonePriceSmartPhoneActivity.text = it.getString("price")
-
 
         }
 
@@ -55,14 +48,12 @@ class ProductFragment : Fragment() {
 
         }
 
-
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-
 
     private fun getUri(phoneName: String?): String {
 

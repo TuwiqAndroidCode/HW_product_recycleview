@@ -12,6 +12,7 @@ import com.example.hw_product_recycleview.databinding.FragmentProductsListBindin
 class ProductsListFragment : Fragment() {
     // this variable for receiving values but no accessible fro reading value from it
     private var _binding: FragmentProductsListBinding? = null
+
     // this variable for getting the value of _binding variable
     private val binding get() = _binding!!
 

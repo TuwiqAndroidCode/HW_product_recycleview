@@ -48,7 +48,7 @@ class SmartPhoneAdapter(private val context: Context?) :
         }
 
         // change the color of add to cart button if the product is out of stock
-        if(item.productQuantity > 0){
+        if (item.productQuantity > 0) {
             holder.addToCart?.setBackgroundColor(context?.getColor(R.color.red)!!)
         }
 
@@ -63,18 +63,11 @@ class SmartPhoneAdapter(private val context: Context?) :
 
         // start SmartPhoneActivity when the user click on the image of the product
         holder.productImage?.setOnClickListener {
-            val action = ProductsListFragmentDirections.
-            actionProductsListFragmentToProductFragment(name = context?.getString(item.productName)!!,
-            price = item.productPrice, imageId = item.productImage)
-
+            val action = ProductsListFragmentDirections.actionProductsListFragmentToProductFragment(
+                name = context?.getString(item.productName)!!,
+                price = item.productPrice, imageId = item.productImage
+            )
             holder.view?.findNavController()?.navigate(action)
-
-
-//            val intent = Intent(context, SmartPhoneActivity::class.java)
-//            intent.putExtra(ProductInfo.PHONE_NAME, context?.getString(item.productName))
-//            intent.putExtra(ProductInfo.PHONE_IMAGE, item.productImage)
-//            intent.putExtra(ProductInfo.PHONE_PRICE, item.productPrice)
-//            it?.context?.startActivity(intent)
 
         }
 
