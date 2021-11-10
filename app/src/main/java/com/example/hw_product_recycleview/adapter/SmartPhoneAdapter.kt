@@ -12,6 +12,7 @@ import com.example.hw_product_recycleview.R
 import com.example.hw_product_recycleview.SmartPhoneActivity
 import com.example.hw_product_recycleview.conistant.ProductInfo
 import com.example.hw_product_recycleview.data.DataSource
+import com.example.hw_product_recycleview.smart_phone_ActivityFragmentArgs
 
 class SmartPhoneAdapter(private val context: Context?) :
     RecyclerView.Adapter<SmartPhoneAdapter.SmartPhoneViewHolder>() {
@@ -52,14 +53,15 @@ class SmartPhoneAdapter(private val context: Context?) :
             }
         }
 
-
+// stoped her (Perform the Navigation Action**)===================================================================
         holder.productImage?.setOnClickListener {
-
-            val intent = Intent(context, SmartPhoneActivity::class.java)
-            intent.putExtra(ProductInfo.PHONE_NAME, context?.getString(item.productName))
-            intent.putExtra(ProductInfo.PHONE_IMAGE, item.productImage)
-            intent.putExtra(ProductInfo.PHONE_PRICE, item.productPrice)
-            it?.context?.startActivity(intent)
+val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(phone = holder.imageView.toString())
+ holder.view.findNavController().navigate(navController)
+//            val intent = Intent(context, smart_phone_ActivityFragmentArgs::class.java)
+//            intent.putExtra(ProductInfo.PHONE_NAME, context?.getString(item.productName))
+//            intent.putExtra(ProductInfo.PHONE_IMAGE, item.productImage)
+//            intent.putExtra(ProductInfo.PHONE_PRICE, item.productPrice)
+//            it?.context?.startActivity(intent)
 
         }
 

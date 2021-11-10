@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/vertical_list_itemFragment">
+
+    <fragment
+        android:id="@+id/vertical_list_itemFragment"
+        android:name="com.example.hw_product_recycleview.vertical_list_itemFragment"
+        android:label="fragment_vertical_list_item"
+        tools:layout="@layout/fragment_vertical_list_item" >
+        <action
+            android:id="@+id/action_vertical_list_itemFragment_to_smart_phone_ActivityFragment"
+            app:destination="@id/smart_phone_ActivityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/smart_phone_ActivityFragment"
+        android:name="com.example.hw_product_recycleview.smart_phone_ActivityFragment"
+        android:label="fragment_smart_phone__activity"
+        tools:layout="@layout/fragment_smart_phone__activity" >
+        <action
+            android:id="@+id/action_smart_phone_ActivityFragment_to_vertical_list_itemFragment"
+            app:destination="@id/vertical_list_itemFragment" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+</navigation>
