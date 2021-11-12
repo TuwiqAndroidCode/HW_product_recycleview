@@ -4,8 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".smart_phone_ActivityFragment">
+    tools:context=".Buy">
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
 
+     <Button
+         android:id="@+id/go_to_phone_website"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="116dp"
+         android:layout_marginTop="208dp"
+         android:backgroundTint="@color/red"
+         android:text="More Details"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+
+     <TextView
+         android:id="@+id/textView"
+         android:layout_width="104dp"
+         android:layout_height="50dp"
+         android:layout_marginStart="128dp"
+         android:layout_marginTop="112dp"
+         android:text="TextView"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+     <!--         app:layout_constraintBottom_toBottomOf="@+id/phone_price_smartPhone_activity"-->
+<!--         app:layout_constraintEnd_toEndOf="@+id/phone_image_smartPhone_activity"-->
+<!--         app:layout_constraintTop_toTopOf="@+id/phone_price_smartPhone_activity"-->
+         app:layout_constraintVertical_bias="0.0" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
         android:id="@+id/phone_image_smartPhone_activity"
         android:layout_width="0dp"
@@ -37,13 +65,4 @@
         app:layout_constraintStart_toStartOf="@+id/phone_name_smartphone_activity"
         app:layout_constraintTop_toBottomOf="@+id/phone_name_smartphone_activity" />
 
-    <Button
-        android:id="@+id/go_to_phone_website"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
-        android:text="More Details"
-        app:layout_constraintBottom_toBottomOf="@+id/phone_price_smartPhone_activity"
-        app:layout_constraintEnd_toEndOf="@+id/phone_image_smartPhone_activity"
-        app:layout_constraintTop_toTopOf="@+id/phone_price_smartPhone_activity" />
 </FrameLayout>

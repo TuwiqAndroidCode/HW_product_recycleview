@@ -3,27 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/vertical_list_itemFragment">
-
+    app:startDestination="@id/buy">
     <fragment
-        android:id="@+id/vertical_list_itemFragment"
-        android:name="com.example.hw_product_recycleview.vertical_list_itemFragment"
-        android:label="fragment_vertical_list_item"
-        tools:layout="@layout/fragment_vertical_list_item" >
-        <action
-            android:id="@+id/action_vertical_list_itemFragment_to_smart_phone_ActivityFragment"
-            app:destination="@id/smart_phone_ActivityFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/smart_phone_ActivityFragment"
-        android:name="com.example.hw_product_recycleview.smart_phone_ActivityFragment"
+        android:id="@+id/store"
+        android:name="com.example.hw_product_recycleview.Buy"
         android:label="fragment_smart_phone__activity"
-        tools:layout="@layout/fragment_smart_phone__activity" >
-        <action
-            android:id="@+id/action_smart_phone_ActivityFragment_to_vertical_list_itemFragment"
-            app:destination="@id/vertical_list_itemFragment" />
+        tools:layout="@layout/fragment_buy" >
         <argument
             android:name="phone"
             app:argType="string" />
+        <action
+            android:id="@+id/action_store_to_buy"
+            app:destination="@id/buy" />
     </fragment>
+    <fragment
+        android:id="@+id/buy"
+        android:name="com.example.hw_product_recycleview.Store"
+        android:label="fragment_vertical_list_item"
+        tools:layout="@layout/fragment_store" >
+        <argument
+            android:name="phoneName"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

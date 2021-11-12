@@ -2,17 +2,15 @@ package com.example.hw_product_recycleview.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hw_product_recycleview.BuyDirections
 import com.example.hw_product_recycleview.R
-import com.example.hw_product_recycleview.SmartPhoneActivity
-import com.example.hw_product_recycleview.conistant.ProductInfo
 import com.example.hw_product_recycleview.data.DataSource
-import com.example.hw_product_recycleview.smart_phone_ActivityFragmentArgs
 
 class SmartPhoneAdapter(private val context: Context?) :
     RecyclerView.Adapter<SmartPhoneAdapter.SmartPhoneViewHolder>() {
@@ -49,14 +47,16 @@ class SmartPhoneAdapter(private val context: Context?) :
             if (item.productQuantity > 0) {
                 Toast.makeText(context, "added to cart", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(context, "The item is out of stock", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Item is out of stock", Toast.LENGTH_SHORT).show()
             }
         }
 
-// stoped her (Perform the Navigation Action**)===================================================================
+// stopped her (Perform the Navigation Action**)===================================================================
         holder.productImage?.setOnClickListener {
-val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(phone = holder.imageView.toString())
- holder.view.findNavController().navigate(navController)
+        val action = BuyDirections.actionStoreToBuy( phoneName = holder.productName.toString())
+         holder.itemView.findNavController().navigate(action)
+
+
 //            val intent = Intent(context, smart_phone_ActivityFragmentArgs::class.java)
 //            intent.putExtra(ProductInfo.PHONE_NAME, context?.getString(item.productName))
 //            intent.putExtra(ProductInfo.PHONE_IMAGE, item.productImage)

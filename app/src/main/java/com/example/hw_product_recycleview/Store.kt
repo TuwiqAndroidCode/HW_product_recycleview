@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hw_product_recycleview.adapter.SmartPhoneAdapter
-import com.example.hw_product_recycleview.databinding.ActivityMainBinding
-import com.example.hw_product_recycleview.databinding.FragmentVerticalListItemBinding
+import com.example.hw_product_recycleview.databinding.FragmentStoreBinding
 
-class vertical_list_itemFragment : Fragment() {
+class Store : Fragment() {
 
-    var binding: FragmentVerticalListItemBinding?=null
+    var binding: FragmentStoreBinding?=null
 
     //- onCreaate() the fragment instantiated and on Create State, (view not created yet)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,16 +24,17 @@ class vertical_list_itemFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-    binding = FragmentVerticalListItemBinding.inflate(layoutInflater)
+    binding = FragmentStoreBinding.inflate(layoutInflater)
     val view= binding!!.root
     return view
 }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.RecyclerView.adapter = SmartPhoneAdapter(applicationContext)
-        binding.RecyclerView.setHasFixedSize(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+binding?.recyclerView?.adapter= SmartPhoneAdapter(context)
+//        binding.RecyclerView.adapter = SmartPhoneAdapter(applicationContext)
+//        binding.RecyclerView.setHasFixedSize(true)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
 
