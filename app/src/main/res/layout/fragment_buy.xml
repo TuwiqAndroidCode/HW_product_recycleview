@@ -5,40 +5,34 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Buy">
- <androidx.constraintlayout.widget.ConstraintLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/phone_image_smartPhone_activity"
+            android:layout_width="392dp"
+            android:layout_height="335dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/iphone" />
+
+        <TextView
+            android:id="@+id/phone_name_smartphone_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/phone_image_smartPhone_activity"
+            app:layout_constraintTop_toBottomOf="@+id/phone_image_smartPhone_activity" />
 
 
-     <ImageView
-         android:id="@+id/phone_image_smartPhone_activity"
-         android:layout_width="392dp"
-         android:layout_height="335dp"
-         android:layout_marginStart="8dp"
-         android:layout_marginTop="4dp"
-         android:layout_marginEnd="8dp"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="1.0"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         app:srcCompat="@drawable/iphone" />
-     <TextView
-         android:id="@+id/phone_name_smartphone_activity"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="16dp"
-         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-         app:layout_constraintStart_toStartOf="@+id/phone_image_smartPhone_activity"
-         app:layout_constraintTop_toBottomOf="@+id/phone_image_smartPhone_activity" />
-
-     <TextView
-         android:id="@+id/phone_price_smartPhone_activity"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="16dp"
-         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-         app:layout_constraintStart_toStartOf="@+id/phone_name_smartphone_activity"
-         app:layout_constraintTop_toBottomOf="@+id/phone_name_smartphone_activity" />
-
- </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

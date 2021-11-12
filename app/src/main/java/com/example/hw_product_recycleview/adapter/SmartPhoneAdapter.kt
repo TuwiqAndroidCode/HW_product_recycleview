@@ -53,7 +53,7 @@ class SmartPhoneAdapter(private val context: Context?) :
 
 // stopped her (Perform the Navigation Action**)===================================================================
         holder.productImage?.setOnClickListener {
-        val action = StoreDirections.actionBuyToStore( phone= holder.productName.toString())
+        val action = StoreDirections.actionBuyToStore( phoneInfo= holder.productName?.text.toString())
          holder.itemView.findNavController().navigate(action)
 
         }
