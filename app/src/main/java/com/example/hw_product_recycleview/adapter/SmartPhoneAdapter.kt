@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hw_product_recycleview.BuyDirections
+import com.example.hw_product_recycleview.StoreDirections
 import com.example.hw_product_recycleview.R
 import com.example.hw_product_recycleview.data.DataSource
 
@@ -53,21 +53,12 @@ class SmartPhoneAdapter(private val context: Context?) :
 
 // stopped her (Perform the Navigation Action**)===================================================================
         holder.productImage?.setOnClickListener {
-        val action = BuyDirections.actionStoreToBuy( phoneName = holder.productName.toString())
+        val action = StoreDirections.actionBuyToStore( phone= holder.productName.toString())
          holder.itemView.findNavController().navigate(action)
-
-
-//            val intent = Intent(context, smart_phone_ActivityFragmentArgs::class.java)
-//            intent.putExtra(ProductInfo.PHONE_NAME, context?.getString(item.productName))
-//            intent.putExtra(ProductInfo.PHONE_IMAGE, item.productImage)
-//            intent.putExtra(ProductInfo.PHONE_PRICE, item.productPrice)
-//            it?.context?.startActivity(intent)
 
         }
 
     }
 
     override fun getItemCount(): Int = dataSource.size
-
-
 }

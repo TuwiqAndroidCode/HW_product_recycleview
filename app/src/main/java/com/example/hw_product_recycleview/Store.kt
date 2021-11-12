@@ -23,7 +23,7 @@ class Store : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
     binding = FragmentStoreBinding.inflate(layoutInflater)
     val view= binding!!.root
     return view
@@ -31,19 +31,11 @@ class Store : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-binding?.recyclerView?.adapter= SmartPhoneAdapter(context)
-//        binding.RecyclerView.adapter = SmartPhoneAdapter(applicationContext)
-//        binding.RecyclerView.setHasFixedSize(true)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding?.recyclerView?.adapter = SmartPhoneAdapter(context)
     }
 
 
     override fun onDestroy() {
         super.onDestroy()
-        binding=null
-    }
-
-
-
-
+        binding=null   }
     }

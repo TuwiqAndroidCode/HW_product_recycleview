@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <!--    xmlns:tools="http://schemas.android.com/tools"-->
     <!--=============================================================here have problem -->
 <androidx.fragment.app.FragmentContainerView
 android:id="@+id/nav_host_fragment"
@@ -17,15 +16,3 @@ app:defaultNavHost="true"
 app:navGraph="@navigation/nav_graph" />
 
     </FrameLayout>
-
-    <!--===================================================================-->
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/grid_recycler_view"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        tools:layout_editor_absoluteX="1dp"-->
-    <!--        tools:layout_editor_absoluteY="1dp"-->
-    <!--        android:orientation="vertical"-->
-    <!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-    <!--        app:spanCount="2"/>-->
-

@@ -10,19 +10,19 @@
         android:label="fragment_smart_phone__activity"
         tools:layout="@layout/fragment_buy" >
         <argument
-            android:name="phone"
+            android:name="phoneInfo"
             app:argType="string" />
-        <action
-            android:id="@+id/action_store_to_buy"
-            app:destination="@id/buy" />
     </fragment>
     <fragment
         android:id="@+id/buy"
         android:name="com.example.hw_product_recycleview.Store"
         android:label="fragment_vertical_list_item"
         tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_buy_to_store"
+            app:destination="@id/store" />
         <argument
-            android:name="phoneName"
+            android:name="phoneInfo"
             app:argType="string" />
     </fragment>
 

@@ -24,7 +24,8 @@ _binding = FragmentBuyBinding.inflate(inflater,container,false)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         arguments?.let {
-            binding
+            binding.phoneInfo.text = it.getString("phoneInfo").toString()
+
         }
 
     }
