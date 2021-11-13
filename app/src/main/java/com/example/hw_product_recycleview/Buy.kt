@@ -22,9 +22,9 @@ _binding = FragmentBuyBinding.inflate(inflater,container,false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         arguments?.let {
             binding.phoneNameSmartphoneActivity.text = it.getString("phoneInfo").toString()
+            binding.phoneImageSmartPhoneActivity.setImageResource(it.getInt("phoneImage"))
 
         }
 

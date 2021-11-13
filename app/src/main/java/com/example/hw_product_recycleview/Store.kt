@@ -10,7 +10,8 @@ import com.example.hw_product_recycleview.databinding.FragmentStoreBinding
 
 class Store : Fragment() {
 
-    var binding: FragmentStoreBinding?=null
+    var _binding: FragmentStoreBinding?=null
+    val binding get() = _binding
 
     //- onCreaate() the fragment instantiated and on Create State, (view not created yet)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,18 +25,18 @@ class Store : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-    binding = FragmentStoreBinding.inflate(layoutInflater)
+    _binding = FragmentStoreBinding.inflate(layoutInflater,container,false)
     val view= binding!!.root
     return view
 }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding?.recyclerView?.adapter = SmartPhoneAdapter(context)
+        binding?.recyclerView?.adapter = context?.let { SmartPhoneAdapter(this, it) }
     }
 
 
     override fun onDestroy() {
         super.onDestroy()
-        binding=null   }
+        _binding=null   }
     }

@@ -10,9 +10,10 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hw_product_recycleview.StoreDirections
 import com.example.hw_product_recycleview.R
+import com.example.hw_product_recycleview.Store
 import com.example.hw_product_recycleview.data.DataSource
 
-class SmartPhoneAdapter(private val context: Context?) :
+class SmartPhoneAdapter(private val context: Store, context1: Context) :
     RecyclerView.Adapter<SmartPhoneAdapter.SmartPhoneViewHolder>() {
 
     private val dataSource = DataSource.smartPhone
@@ -45,15 +46,16 @@ class SmartPhoneAdapter(private val context: Context?) :
         }
         holder.addToCart?.setOnClickListener {
             if (item.productQuantity > 0) {
-                Toast.makeText(context, "added to cart", Toast.LENGTH_SHORT).show()
+//               Toast.makeText(context, "added to cart", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(context, "Item is out of stock", Toast.LENGTH_SHORT).show()
+  //              Toast.makeText(context, "Item is out of stock", Toast.LENGTH_SHORT).show()
             }
         }
 
 // stopped her (Perform the Navigation Action**)===================================================================
         holder.productImage?.setOnClickListener {
-        val action = StoreDirections.actionBuyToStore( phoneInfo= holder.productName?.text.toString())
+
+        val action = StoreDirections.actionBuyToStore( phoneInfo= holder.productName?.text.toString(),phoneImage =(item.productImage))
          holder.itemView.findNavController().navigate(action)
 
         }
