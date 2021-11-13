@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/buy">
+    <fragment
+        android:id="@+id/store"
+        android:name="com.example.hw_product_recycleview.Buy"
+        android:label="fragment_smart_phone__activity"
+        tools:layout="@layout/fragment_buy" >
+        <argument
+            android:name="phoneInfo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/buy"
+        android:name="com.example.hw_product_recycleview.Store"
+        android:label="fragment_vertical_list_item"
+        tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_buy_to_store"
+            app:destination="@id/store" />
+        <argument
+            android:name="phoneInfo"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
